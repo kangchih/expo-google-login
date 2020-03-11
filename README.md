@@ -1,23 +1,22 @@
 # React native with google login and firebase 
 
-- Learn how to add Expo(Version 36.0.0) Google Login to your app and then save it to your Firebase Realtime Database 
+- Learn how to add Expo(Version 36.0.0) Google Login to your app and save it to your Firebase Realtime Database 
 
 ### Reference:
 * [React Native Firebase Tutorials #1](https://www.youtube.com/watch?v=ZcaQJoXY-3Q&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_)
 * [React Native Firebase Tutorials #2](https://www.youtube.com/watch?v=GZKaVJEd4JU&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_&index=2)
 * https://docs.expo.io/versions/v36.0.0/sdk/google/
 * https://reactnavigation.org/docs/react-native-screens/
-*
 
 ### Install Dependencies
 
 * expo init your-project-name
 * cd your-project-name
-* npm install react-navigation
-* npm install react-native-gesture-handler
+* npm install --save react-navigation
+* expo install react-native-gesture-handler
 * npm install expo-google-app-auth
 * npm install --save firebase
-* npm install --save react-native-screens
+* expo install react-native-screens
 * npm install
 * expo start
 
@@ -29,8 +28,7 @@ export const firebaseConfig = {
   authDomain: '',
   databaseURL: '',
   projectId: '',
-  storageBucket: '',
-  messagingSenderId: ''
+  storageBucket: ''
 };
 ```
 
