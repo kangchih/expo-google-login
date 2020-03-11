@@ -6,7 +6,7 @@
 * [React Native Firebase Tutorials #1](https://www.youtube.com/watch?v=ZcaQJoXY-3Q&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_)
 * [React Native Firebase Tutorials #2](https://www.youtube.com/watch?v=GZKaVJEd4JU&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_&index=2)
 * https://docs.expo.io/versions/v36.0.0/sdk/google/
-*
+* https://reactnavigation.org/docs/react-native-screens/
 *
 
 ### Install Dependencies
@@ -17,6 +17,7 @@
 * npm install react-native-gesture-handler
 * npm install expo-google-app-auth
 * npm install --save firebase
+* npm install --save react-native-screens
 * npm install
 * expo start
 

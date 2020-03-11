@@ -6,6 +6,11 @@ import DashboardScreen from './screens/DashboardScreen';
 import LoadingScreen from './screens/LoadingScreen';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './config';
+// Before rendering any navigation stack
+import { enableScreens } from 'react-native-screens';
+// By using react-native-screens, it is possible for each native platform to 
+// optimize the memory usage for screens that are under the view stack and also simplify the native node hierarchy. 
+enableScreens();
 
 //Fix "Firebase App named '[DEFAULT]' already exists" issue
 if (!firebase.apps.length) {
@@ -24,9 +29,9 @@ export default function App() {
 }
 
 const AppSwitchNavigator = createSwitchNavigator({
-  LoadingScreen: {screen: LoadingScreen},
-  LoginScreen: {screen: LoginScreen},
-  DashboardScreen: {screen: DashboardScreen}
+  LoadingScreen: { screen: LoadingScreen },
+  LoginScreen: { screen: LoginScreen },
+  DashboardScreen: { screen: DashboardScreen }
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
