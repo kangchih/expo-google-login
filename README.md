@@ -7,6 +7,7 @@
 * [React Native Firebase Tutorials #2](https://www.youtube.com/watch?v=GZKaVJEd4JU&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_&index=2)
 * https://docs.expo.io/versions/v36.0.0/sdk/google/
 * https://reactnavigation.org/docs/react-native-screens/
+* https://blog.expo.io/react-native-google-sign-in-with-expo-d1707579a7ce
 
 ### Install Dependencies
 
