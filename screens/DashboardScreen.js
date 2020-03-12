@@ -1,15 +1,41 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import firebase from 'firebase';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 
 const DashboardScreen = props => {
-    return (
-      <View style={styles.container}>
-        <Text>DashboardScreen</Text>
-        <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
-      </View>
-    );
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>DashboardScreen</Text>
+      <GoogleSignInButton onPress={() => firebase.auth().signOut()}>
+        Sign out with Google
+      </GoogleSignInButton>
+    </View>
+  );
 }
+
+// class GoogleProfile extends React.PureComponent {
+//   render() {
+//     const { photoURL, displayName, email } = this.props;
+//     return (
+//       <View style={styles.container}>
+//         {photoURL && (
+//           <Image
+//             source={{
+//               uri: photoURL,
+//             }}
+//             style={styles.image}
+//           />
+//         )}
+//         <View style={{ marginLeft: 12 }}>
+//           <Text style={styles.text}>{displayName}</Text>
+//           <Text style={styles.text}>{email}</Text>
+//         </View>
+//       </View>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
   container: {

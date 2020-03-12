@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import firebase from 'firebase';
 import * as Google from 'expo-google-app-auth';
 import Secret from '../secret';
+import GoogleSignInButton from '../components/GoogleSignInButton';
+
 class LoginScreen extends Component {
   isUserEqual = (googleUser, firebaseUser) => {
     if (firebaseUser) {
@@ -94,8 +96,8 @@ class LoginScreen extends Component {
 
       const result = await Google.logInAsync({
         // behavior: 'web',
-        iosClientId: Secret.iosClientId, 
-        androidClientId: Secret.androidClientId, 
+        iosClientId: Secret.iosClientId,
+        androidClientId: Secret.androidClientId,
         scopes: ['profile', 'email']
       });
 
@@ -117,10 +119,9 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="Login With Google"
-          onPress={() => this.signInWithGoogleAsync()}
-        />
+        <GoogleSignInButton onPress={() => this.signInWithGoogleAsync()}>
+          Sign in with Google
+        </GoogleSignInButton>
       </View>
     );
   }
@@ -132,7 +133,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
+  googleProfileContainer: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 24,
+  },
+  image: { width: 128, borderRadius: 64, aspectRatio: 1 },
+  text: { color: 'black', fontSize: 16, fontWeight: '600' },
 });
 
 export default LoginScreen;

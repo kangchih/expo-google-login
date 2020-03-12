@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
@@ -24,9 +27,26 @@ if (!firebase.apps.length) {
 }
 // export default !firebase.apps.length ? firebase.initializeApp(config) : firebase.app();
 
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'roboto-medium': require('./assets/fonts/Roboto-Medium.ttf')
+  });
+};
+
 export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+  if (!fontLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setFontLoaded(true)}
+        onError={(err) => console.log(err)}
+      />);
+  }
+
   return <AppNavigator />;
 }
+
 
 const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen: { screen: LoadingScreen },
@@ -36,11 +56,11 @@ const AppSwitchNavigator = createSwitchNavigator({
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center'
+//   }
+// });
