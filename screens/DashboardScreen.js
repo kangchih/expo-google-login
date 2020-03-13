@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import firebase from 'firebase';
 import GoogleSignInButton from '../components/GoogleSignInButton';
 
@@ -8,9 +8,7 @@ const DashboardScreen = props => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>DashboardScreen</Text>
-      <GoogleSignInButton onPress={() => firebase.auth().signOut()}>
-        Sign out with Google
-      </GoogleSignInButton>
+      <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
     </View>
   );
 }

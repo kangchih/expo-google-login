@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, TouchableNativeFeedback, View, Platform } from 'react-native';
 
-const googleIcon = {
+const facebookIcon = {
   uri:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/200px-Google_%22G%22_Logo.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/0/07/Facebook_logo.png'
 };
 
 let TouchableCmp = TouchableOpacity;
@@ -12,7 +12,7 @@ if (Platform.OS === 'android' && Platform.Version >= 21) {
   TouchableCmp = TouchableNativeFeedback;
 }
 
-export default class GoogleSignInButton extends React.PureComponent {
+export default class FacebookSignInButton extends React.PureComponent {
   static defaultProps = {
     onPress() { },
   };
@@ -26,7 +26,7 @@ export default class GoogleSignInButton extends React.PureComponent {
         {...props}
       >
         <View style={styles.content}>
-          <Image source={googleIcon} style={styles.icon} />
+          <Image source={facebookIcon} style={styles.icon} />
           <Text style={styles.text}>{children}</Text>
         </View>
       </TouchableCmp>
@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     shadowOffset: { width: 0, height: 2 },
     // overflow: 'visible',
-    overflow: Platform.OS === 'android' && Platform.Version >= 21 
-    ? 'hidden'
-    : 'visible',
-    elevation: 5, 
+    overflow: Platform.OS === 'android' && Platform.Version >= 21
+      ? 'hidden'
+      : 'visible',
+    elevation: 5,
     shadowColor: 'black',
     backgroundColor: 'white',
     borderRadius: 4,
@@ -59,9 +59,8 @@ const styles = StyleSheet.create({
   text: {
     color: 'gray',
     marginLeft: 12,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
     fontFamily: 'roboto-medium',
-
   },
 });

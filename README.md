@@ -8,6 +8,7 @@
 * https://docs.expo.io/versions/v36.0.0/sdk/google/
 * https://reactnavigation.org/docs/react-native-screens/
 * https://blog.expo.io/react-native-google-sign-in-with-expo-d1707579a7ce
+* https://docs.expo.io/versions/latest/sdk/facebook/
 
 ### Install Dependencies
 
@@ -18,6 +19,7 @@
 * npm install expo-google-app-auth
 * npm install --save firebase
 * expo install react-native-screens
+* expo install expo-facebook
 * npm install
 * expo start
 
