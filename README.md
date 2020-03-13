@@ -1,6 +1,6 @@
-# React native with google login and firebase 
+# React native with google login, facebook login and update logged-in user's information in firebase's realtime database  
 
-- Learn how to add Expo(Version 36.0.0) Google Login to your app and save it to your Firebase Realtime Database 
+- Learn how to add Expo(Version 36.0.0) Google & Facebook Login to your app and save it to your Firebase Realtime Database 
 
 ### Reference:
 * [React Native Firebase Tutorials #1](https://www.youtube.com/watch?v=ZcaQJoXY-3Q&list=PLy9JCsy2u97nVN5GxrjC6rv9XfyxoDtB_)
