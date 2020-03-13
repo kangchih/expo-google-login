@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import firebase from 'firebase';
-import GoogleSignInButton from '../components/GoogleSignInButton';
 
 const DashboardScreen = props => {
 
